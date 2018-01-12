@@ -15,8 +15,7 @@ s.homepage = 'https://github.com/hyc286716320/GuideView' //主页
 s.author   = { 'HuYunchao' => 'hyc286716320' } //作者
 s.source   = { :git => 'https://github.com/hyc286716320/GuideView.git', :tag => "1.0" } //git路径、指定tag号
 s.platform = :ios 
-s.source_files = 'GuideView/*'  //库的源代码文件
-#s.framework = 'UIKit/UIKit'  //依赖的framework
+s.source_files = "HYCGuideView/*.{h,m}"
 s.requires_arc = true
 end
 
