@@ -13,7 +13,7 @@ s.license  = "MIT"
 s.summary  = '添加手图,导航图' 
 s.homepage = 'https://github.com/hyc286716320/HYCGuideView'
 s.author   = {'HuYunchao' => 'hyc286716320'} 
-s.source   = { :git => 'https://github.com/hyc286716320/HYCGuideView.git', :tag =>"1.1"} 
+s.source   = { :git => 'https://github.com/hyc286716320/HYCGuideView.git', :tag =>s.version} 
 s.platform     = :ios 
 s.source_files = 'HYCGuideView'
 s.requires_arc = true
