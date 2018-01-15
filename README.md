@@ -23,5 +23,7 @@ Then, run the following command:
           ] isDEBUG:GuideViewDEBUG]];
 ```
 __image__:图片名字
+
 __frame__:(选填) 图片的frame,如果不填则为全屏
+
 __color__:(选填) 手图背景颜色
