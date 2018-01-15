@@ -31,7 +31,7 @@
     if (self.page < ImageNameObject.count) {
         NSValue * frameValue = (NSValue *)(ImageNameObject[self.page][@"frame"]);
         frameValue = frameValue ? : [NSValue valueWithCGRect:[UIScreen mainScreen].bounds];
-        [self addOneGuideViewImageName:ImageNameObject[self.page][@"image"] andFrame:frameValue.CGRectValue andBGColor:ImageNameObject[self.page][@"color"] ? : [[UIColor groupTableViewBackgroundColor] colorWithAlphaComponent:0.8] andImageNameObject:ImageNameObject];
+        [self addOneGuideViewImageName:ImageNameObject[self.page][@"image"] andFrame:frameValue.CGRectValue andBGColor:ImageNameObject[self.page][@"color"] ? : [[UIColor blackColor] colorWithAlphaComponent:0.8] andImageNameObject:ImageNameObject];
     }else{
         [self removeFromSuperview];
     }

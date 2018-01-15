@@ -7,13 +7,13 @@
 #
 
 Pod::Spec.new do |s|
-s.name     = 'GuideView'
-s.version  = '1.0' 
+s.name     = 'HYCGuideView'
+s.version  = '1.1' 
 s.license  = "MIT"
-s.summary  = 'This is a countdown button' 
-s.homepage = 'https://github.com/hyc286716320/GuideView'
+s.summary  = '添加手图,导航图' 
+s.homepage = 'https://github.com/hyc286716320/HYCGuideView'
 s.author   = {'HuYunchao' => 'hyc286716320'} 
-s.source   = { :git => 'https://github.com/hyc286716320/GuideView.git', :tag =>"1.0"} 
+s.source   = { :git => 'https://github.com/hyc286716320/HYCGuideView.git', :tag =>"1.1"} 
 s.platform     = :ios 
 s.source_files = 'HYCGuideView'
 s.requires_arc = true
