@@ -4,10 +4,13 @@
 To integrate HYCGuideView into your Xcode project using CocoaPods, specify it in your Podfile:
 
 `$ pod 'HYCGuideView'`
+
 or
+
 `pod 'HYCGuideView', '~> 1.1'`
 
 Then, run the following command:
+
 `$ pod install`
 
 ## Usage
