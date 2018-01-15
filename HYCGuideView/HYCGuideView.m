@@ -10,13 +10,15 @@
 @interface HYCGuideView()
 @property (nonatomic,assign)NSInteger page;
 @property (nonatomic,copy)NSArray <NSDictionary *>*ImageNameObject;
+@property (nonatomic,assign)BOOL isDEBUG;
 @end
 @implementation HYCGuideView
 
-- (instancetype)initWithaddGuideViewOnWindowImageObject:(NSArray <NSDictionary *>*)ImageNameObject
+- (instancetype)initWithaddGuideViewOnWindowImageObject:(NSArray <NSDictionary *>*)ImageNameObject isDEBUG:(BOOL)isDEBUG
 {
     self = [super initWithFrame:[UIScreen mainScreen].bounds];
     if (self) {
+        self.isDEBUG = isDEBUG;
         [self addGuideViewOnWindowImageObject:ImageNameObject];
         
         
@@ -39,6 +41,10 @@
 
 - (void)addOneGuideViewImageName:(NSString *)ImageName andFrame:(CGRect)ImageFrame andBGColor:(UIColor *)BGColor andImageNameObject:(NSArray <NSDictionary *>*)ImageNameObject{
     
+    if (self.isDEBUG){
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:[NSString stringWithFormat:@"HYC_%@_%@_HYC",ImageName,[[NSBundle mainBundle] bundleIdentifier]]];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
     if (![[NSUserDefaults standardUserDefaults] boolForKey:
          [NSString stringWithFormat:@"HYC_%@_%@_HYC",ImageName,[[NSBundle mainBundle] bundleIdentifier]]
          ]) {
@@ -59,10 +65,8 @@
         [[UIApplication sharedApplication].keyWindow bringSubviewToFront:view];
         
         //添加手图为yes
-        if (!self.isDEBUG) {
             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:[NSString stringWithFormat:@"HYC_%@_%@_HYC",ImageName,[[NSBundle mainBundle] bundleIdentifier]]];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-        }
+        [[NSUserDefaults standardUserDefaults] synchronize];
         
     }else{
         

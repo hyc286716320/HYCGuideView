@@ -10,8 +10,6 @@
 
 @interface HYCGuideView : UIView
 
-@property (nonatomic,assign)BOOL isDEBUG;
-
-- (instancetype)initWithaddGuideViewOnWindowImageObject:(NSArray <NSDictionary *>*)ImageNameObject;
+- (instancetype)initWithaddGuideViewOnWindowImageObject:(NSArray <NSDictionary *>*)ImageNameObject isDEBUG:(BOOL)isDEBUG;
 
 @end
