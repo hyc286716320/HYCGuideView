@@ -41,7 +41,7 @@
 
 - (void)addOneGuideViewImageName:(NSString *)ImageName andFrame:(CGRect)ImageFrame andBGColor:(UIColor *)BGColor andImageNameObject:(NSArray <NSDictionary *>*)ImageNameObject{
     
-    if (self.isDEBUG){
+    if (self.isDEBUG && DEBUG){
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:[NSString stringWithFormat:@"HYC_%@_%@_HYC",ImageName,[[NSBundle mainBundle] bundleIdentifier]]];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
