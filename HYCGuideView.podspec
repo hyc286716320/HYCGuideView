@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
 s.name     = 'HYCGuideView'
-s.version  = '1.2' 
+s.version  = '1.4' 
 s.license  = "MIT"
 s.summary  = '添加手图,导航图' 
 s.homepage = 'https://github.com/hyc286716320/HYCGuideView'
