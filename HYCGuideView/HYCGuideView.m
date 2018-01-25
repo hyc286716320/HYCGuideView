@@ -11,6 +11,7 @@
 @property (nonatomic,assign)NSInteger page;
 @property (nonatomic,copy)NSArray <NSDictionary *>*ImageNameObject;
 @property (nonatomic,assign)BOOL isDEBUG;
+@property (nonatomic,strong)UIView *selfName;
 @end
 @implementation HYCGuideView
 
@@ -19,11 +20,12 @@
     self = [super initWithFrame:[UIScreen mainScreen].bounds];
     if (self) {
         self.isDEBUG = isDEBUG;
+        self.selfName = self;
         [self addGuideViewOnWindowImageObject:ImageNameObject];
         
         
     }
-    return self;
+    return self.selfName?self:nil;
 }
 - (void)addGuideViewOnWindowImageObject:(NSArray <NSDictionary *>*)ImageNameObject{
     
@@ -35,6 +37,7 @@
         frameValue = frameValue ? : [NSValue valueWithCGRect:[UIScreen mainScreen].bounds];
         [self addOneGuideViewImageName:ImageNameObject[self.page][@"image"] andFrame:frameValue.CGRectValue andBGColor:ImageNameObject[self.page][@"color"] ? : [[UIColor blackColor] colorWithAlphaComponent:0.8] andImageNameObject:ImageNameObject];
     }else{
+        self.selfName = nil;
         [self removeFromSuperview];
     }
 }
@@ -46,8 +49,8 @@
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
     if (![[NSUserDefaults standardUserDefaults] boolForKey:
-         [NSString stringWithFormat:@"HYC_%@_%@_HYC",ImageName,[[NSBundle mainBundle] bundleIdentifier]]
-         ]) {
+          [NSString stringWithFormat:@"HYC_%@_%@_HYC",ImageName,[[NSBundle mainBundle] bundleIdentifier]]
+          ]) {
         UIView *view = [[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];
         
         view.backgroundColor = BGColor;
@@ -65,7 +68,7 @@
         [[UIApplication sharedApplication].keyWindow bringSubviewToFront:view];
         
         //添加手图为yes
-            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:[NSString stringWithFormat:@"HYC_%@_%@_HYC",ImageName,[[NSBundle mainBundle] bundleIdentifier]]];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:[NSString stringWithFormat:@"HYC_%@_%@_HYC",ImageName,[[NSBundle mainBundle] bundleIdentifier]]];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
     }else{
@@ -83,3 +86,4 @@
     [self addGuideViewOnWindowImageObject:self.ImageNameObject];
 }
 @end
+
