@@ -44,13 +44,13 @@
 
 - (void)addOneGuideViewImageName:(NSString *)ImageName andFrame:(CGRect)ImageFrame andBGColor:(UIColor *)BGColor andImageNameObject:(NSArray <NSDictionary *>*)ImageNameObject{
     
-    if (self.isDEBUG && DEBUG){
+    if (self.isDEBUG){
         [[NSUserDefaults standardUserDefaults] setBool:NO forKey:[NSString stringWithFormat:@"HYC_%@_%@_HYC",ImageName,[[NSBundle mainBundle] bundleIdentifier]]];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
     if (![[NSUserDefaults standardUserDefaults] boolForKey:
-          [NSString stringWithFormat:@"HYC_%@_%@_HYC",ImageName,[[NSBundle mainBundle] bundleIdentifier]]
-          ]) {
+         [NSString stringWithFormat:@"HYC_%@_%@_HYC",ImageName,[[NSBundle mainBundle] bundleIdentifier]]
+         ]) {
         UIView *view = [[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];
         
         view.backgroundColor = BGColor;
@@ -68,7 +68,7 @@
         [[UIApplication sharedApplication].keyWindow bringSubviewToFront:view];
         
         //添加手图为yes
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:[NSString stringWithFormat:@"HYC_%@_%@_HYC",ImageName,[[NSBundle mainBundle] bundleIdentifier]]];
+            [[NSUserDefaults standardUserDefaults] setBool:YES forKey:[NSString stringWithFormat:@"HYC_%@_%@_HYC",ImageName,[[NSBundle mainBundle] bundleIdentifier]]];
         [[NSUserDefaults standardUserDefaults] synchronize];
         
     }else{
@@ -86,4 +86,3 @@
     [self addGuideViewOnWindowImageObject:self.ImageNameObject];
 }
 @end
-
