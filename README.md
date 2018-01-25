@@ -7,7 +7,7 @@ To integrate HYCGuideView into your Xcode project using CocoaPods, specify it in
 
 or
 
-`pod 'HYCGuideView', '~> 1.1'`
+`pod 'HYCGuideView', '~> 1.2'`
 
 Then, run the following command:
 
@@ -18,12 +18,12 @@ Then, run the following command:
 ```
 [self.view addSubview:[[HYCGuideView alloc]initWithaddGuideViewOnWindowImageObject:
       @[@{
-          @"image":@"zxsu_tjcp",
+          @"image":@"第一张图名字",
           @"frame":[NSValue valueWithCGRect:frame],
           @"color":[[UIColor blackColor] colorWithAlphaComponent:0.8]
           },
           @{
-          @"image":@"zxsu_tjcp"
+          @"image":@"第二张图片的名字"
           }
           ] isDEBUG:YES]];
 ```
